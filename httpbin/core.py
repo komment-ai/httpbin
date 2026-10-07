@@ -215,8 +215,7 @@ def before_request():
 
 @app.after_request
 def set_cors_headers(response):
-    response.headers["Access-Control-Allow-Origin"] = request.headers.get("Origin", "*")
-    response.headers["Access-Control-Allow-Credentials"] = "true"
+    response.headers["Access-Control-Allow-Origin"] = "*"
 
     if request.method == "OPTIONS":
         # Both of these headers are only used for the "preflight request"
