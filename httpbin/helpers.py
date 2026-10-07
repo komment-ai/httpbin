@@ -403,7 +403,7 @@ def __parse_request_range(range_header_text):
     try:
         right = int(components[1])
     except:
-        pass
+        right = None
 
     try:
         left = int(components[0])
